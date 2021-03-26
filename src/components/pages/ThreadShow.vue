@@ -1,7 +1,7 @@
 <template>
   <div class="col-large push-top">
     <h1>{{ thread.title }}</h1>
-    <post-list :posts="threadPosts" />
+    <post-list :posts="threadPosts"></post-list>
   </div>
 </template>
 
@@ -12,6 +12,7 @@ export default {
   components: {
     PostList
   },
+  name: 'ThreadShow',
   props: {
     id: {
       required: true,
@@ -35,7 +36,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .post-list {
   margin-top: 20px;
 }
