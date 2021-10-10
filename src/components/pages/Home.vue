@@ -6,14 +6,14 @@
 <script>
 import CategoryList from '@/components/CategoryList'
 
-import sourceData from '@/data.json'
 export default {
   components: {
     CategoryList
   },
-  data() {
-    return {
-      categories: sourceData.categories
+
+  computed: {
+    categories() {
+      return this.$store.state.categories
     }
   }
 }

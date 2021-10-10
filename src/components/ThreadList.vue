@@ -41,8 +41,6 @@
 </template>
 
 <script>
-import sourceData from '@/data.json'
-
 export default {
   props: {
     threads: {
@@ -51,10 +49,13 @@ export default {
     }
   },
 
-  data() {
-    return {
-      posts: sourceData.posts,
-      users: sourceData.users
+  computed: {
+    users() {
+      return this.$store.state.users
+    },
+    posts() {
+      console.log(this.$store.state.posts)
+      return this.$store.state.posts
     }
   },
   methods: {
