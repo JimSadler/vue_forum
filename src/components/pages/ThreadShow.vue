@@ -1,6 +1,14 @@
 <template>
   <div class="col-large push-top">
-    <h1>{{ thread.title }}</h1>
+    <h1>
+      {{ thread.title }}
+      <router-link
+        :to="{ name: 'ThreadEdit', id: this.id }"
+        class="btn-green btn-xsmall mt-n2"
+        tag="button"
+        >Edit Thread</router-link
+      >
+    </h1>
     <post-list :posts="threadPosts"></post-list>
     <PostEditor @save="addPost" />
   </div>
@@ -9,6 +17,7 @@
 <script>
 import PostList from '@/components/PostList'
 import PostEditor from '@/components/PostEditor'
+import { findById } from '@/helpers'
 export default {
   components: {
     PostList,
@@ -30,7 +39,7 @@ export default {
       return this.$store.state.posts
     },
     thread() {
-      return this.threads.find((thread) => thread.id === this.id) // also available under this.$route.params.id
+      return findById(this.threads, this.id) // also available under this.$route.params.id
     },
     threadPosts() {
       return this.posts.filter((post) => post.threadId === this.id)
@@ -315,5 +324,8 @@ export default {
 
 .post-listing-editor {
   flex: 1 1 83%;
+}
+.btn-xsmall {
+  margin-top: -20px;
 }
 </style>

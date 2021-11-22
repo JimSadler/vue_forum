@@ -1,21 +1,23 @@
 body {
-  background-color: #F6F8FF;
+  background-color: #f6f8ff;
   min-height: 100vh;
 }
 
-*, *:after, *:before {
+*,
+*:after,
+*:before {
   box-sizing: border-box;
 }
 
 @media (min-width: 1024px) {
   html {
-      font-size: 16px;
+    font-size: 16px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 1023px) {
   html {
-      font-size: 14px;
+    font-size: 14px;
   }
 }
 
@@ -39,7 +41,7 @@ figure {
 figcaption {
   display: block;
   text-align: center;
-  font-size: .8rem;
+  font-size: 0.8rem;
 }
 
 .list-title {
@@ -63,7 +65,13 @@ figcaption {
   color: #89c6af;
 }
 
-.img-round, .avatar, .avatar-xsmall, .avatar-small, .avatar-medium, .avatar-large, .avatar-xlarge {
+.img-round,
+.avatar,
+.avatar-xsmall,
+.avatar-small,
+.avatar-medium,
+.avatar-large,
+.avatar-xlarge {
   border-radius: 50%;
   max-width: 100%;
 }
@@ -97,7 +105,7 @@ figcaption {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .forum-list .forum-listing .forum-details {
-      flex-basis: 100%;
+    flex-basis: 100%;
   }
 }
 
@@ -115,7 +123,11 @@ figcaption {
   display: inline;
 }
 
-.forum-list .forum-listing .forum-details ul.subforums.subforums li:not(:last-of-type)::after {
+.forum-list
+  .forum-listing
+  .forum-details
+  ul.subforums.subforums
+  li:not(:last-of-type)::after {
   content: '\f111';
   font-family: 'FontAwesome';
   font-size: 4px;
@@ -301,7 +313,7 @@ figcaption {
 }
 
 .pagination button:hover {
-  background: #57AD8D;
+  background: #57ad8d;
 }
 
 .pagination button:disabled {
@@ -320,21 +332,24 @@ figcaption {
 }
 
 @keyframes shake {
-  10%, 90% {
-      transform: translate3d(-1px, 0, 0);
+  10%,
+  90% {
+    transform: translate3d(-1px, 0, 0);
   }
-  20%, 80% {
-      transform: translate3d(2px, 0, 0);
+  20%,
+  80% {
+    transform: translate3d(2px, 0, 0);
   }
-  30%, 50%, 70% {
-      transform: translate3d(-4px, 0, 0);
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-4px, 0, 0);
   }
-  40%, 60% {
-      transform: translate3d(4px, 0, 0);
+  40%,
+  60% {
+    transform: translate3d(4px, 0, 0);
   }
 }
-
-
 
 .profile-card {
   padding: 10px 20px 20px 20px;
@@ -346,7 +361,7 @@ figcaption {
 
 @media (min-width: 820px) {
   .profile-card {
-      margin-right: 20px;
+    margin-right: 20px;
   }
 }
 
@@ -378,13 +393,13 @@ figcaption {
 
 @media (max-width: 720px) {
   .profile-header {
-      flex-wrap: wrap;
+    flex-wrap: wrap;
   }
 }
 
 @media (min-width: 1024px) {
   .activity-list {
-      padding: 0px 10px;
+    padding: 0px 10px;
   }
 }
 
@@ -397,11 +412,11 @@ figcaption {
 
 @media (max-width: 720px) {
   .activity-list .activity {
-      padding: 10px 15px;
+    padding: 10px 15px;
   }
 
   .activity-list .activity .post-content {
-      padding-left: 0;
+    padding-left: 0;
   }
 }
 
@@ -427,7 +442,7 @@ figcaption {
 
 @media (max-width: 720px) {
   .activity-list .activity .activity-header .title {
-      flex-basis: 100%;
+    flex-basis: 100%;
   }
 }
 
@@ -461,18 +476,18 @@ textarea#user_bio {
 
 span.offline::before {
   font-family: FontAwesome;
-  content: "\f1db";
+  content: '\f1db';
   font-size: 14px;
   margin-right: 5px;
 }
 
 span.online {
-  color: #57AD8D;
+  color: #57ad8d;
 }
 
 span.online::before {
   font-family: FontAwesome;
-  content: "\f2be";
+  content: '\f2be';
   font-size: 14px;
   margin-right: 5px;
 }
@@ -488,10 +503,10 @@ span.online::before {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .header {
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 10px;
-      height: 60px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    height: 60px;
   }
 }
 
@@ -506,15 +521,15 @@ span.online::before {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .svg-logo {
-      height: 45px;
-      width: 40px;
+    height: 45px;
+    width: 40px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 400px) {
   .svg-logo {
-      height: 40px;
-      width: 35px;
+    height: 40px;
+    width: 35px;
   }
 }
 
@@ -525,11 +540,19 @@ span.online::before {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .wrap-right {
-      padding: 16px 0;
+    padding: 16px 0;
   }
 }
 
-.text-faded, .forum-stats ul li, .thread-list .thread .created_at, .post-content blockquote.big .author span.time, .post-content blockquote.small .author .time, .post-content blockquote.simple .author, .activity-list .activity .activity-header .title span, .activity-list .activity .thread-details, span.offline {
+.text-faded,
+.forum-stats ul li,
+.thread-list .thread .created_at,
+.post-content blockquote.big .author span.time,
+.post-content blockquote.small .author .time,
+.post-content blockquote.simple .author,
+.activity-list .activity .activity-header .title span,
+.activity-list .activity .thread-details,
+span.offline {
   color: rgba(84, 84, 84, 0.7);
 }
 
@@ -539,7 +562,7 @@ h1 {
 
 @media (min-width: 240px) and (max-width: 720px) {
   h1 {
-      font-size: 24px;
+    font-size: 24px;
   }
 }
 
@@ -549,74 +572,201 @@ h2 {
 
 @media (min-width: 240px) and (max-width: 720px) {
   h2 {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
 
-.text-lead, .forum-list .forum-listing .threads-count .count, .profile-card .stats span, .modal-container .modal .modal-header .title {
+.text-lead,
+.forum-list .forum-listing .threads-count .count,
+.profile-card .stats span,
+.modal-container .modal .modal-header .title {
   font-size: 26px;
   line-height: 1.5;
   font-weight: 300;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text-lead, .forum-list .forum-listing .threads-count .count, .profile-card .stats span, .modal-container .modal .modal-header .title {
-      font-size: 22px;
+  .text-lead,
+  .forum-list .forum-listing .threads-count .count,
+  .profile-card .stats span,
+  .modal-container .modal .modal-header .title {
+    font-size: 22px;
   }
 }
 
-.text, p, .text-xsmall, .thread-list .thread .created_at, .pagination, .post-content blockquote.small .author .time, .post-content blockquote.simple .author .time, .activity-list .activity .thread-details, span.offline, span.online, .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after, .text-small, .forum-list .forum-listing .forum-details ul.subforums, .post-content blockquote.big .author, .post-content blockquote.small .author a, .post-content blockquote.simple .author, .activity-list .activity .activity-header .title span, .btn-small, ul.breadcrumbs li, .text-large, .list-title, .forum-stats ul li, .profile-card .user-website, .activity-list .activity .activity-header .title, .btn-large, .text-xlarge, .btn-xlarge, .btn, .btn-blue, .btn-blue-outlined, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
+.text,
+p,
+.text-xsmall,
+.thread-list .thread .created_at,
+.pagination,
+.post-content blockquote.small .author .time,
+.post-content blockquote.simple .author .time,
+.activity-list .activity .thread-details,
+span.offline,
+span.online,
+.btn-xsmall,
+.btn-brown,
+ul.breadcrumbs li:not(:last-of-type)::after,
+.text-small,
+.forum-list .forum-listing .forum-details ul.subforums,
+.post-content blockquote.big .author,
+.post-content blockquote.small .author a,
+.post-content blockquote.simple .author,
+.activity-list .activity .activity-header .title span,
+.btn-small,
+ul.breadcrumbs li,
+.text-large,
+.list-title,
+.forum-stats ul li,
+.profile-card .user-website,
+.activity-list .activity .activity-header .title,
+.btn-large,
+.text-xlarge,
+.btn-xlarge,
+.btn,
+.btn-blue,
+.btn-blue-outlined,
+.btn-brown-outlined,
+.btn-green,
+.btn-green-outlined,
+.btn-red,
+.btn-red-outlined,
+.btn-ghost {
   font-size: 16px;
   line-height: 1.5;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text, p, .text-xsmall, .thread-list .thread .created_at, .pagination, .post-content blockquote.small .author .time, .post-content blockquote.simple .author .time, .activity-list .activity .thread-details, span.offline, span.online, .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after, .text-small, .forum-list .forum-listing .forum-details ul.subforums, .post-content blockquote.big .author, .post-content blockquote.small .author a, .post-content blockquote.simple .author, .activity-list .activity .activity-header .title span, .btn-small, ul.breadcrumbs li, .text-large, .list-title, .forum-stats ul li, .profile-card .user-website, .activity-list .activity .activity-header .title, .btn-large, .text-xlarge, .btn-xlarge, .btn, .btn-blue, .btn-blue-outlined, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
-      font-size: 15px;
+  .text,
+  p,
+  .text-xsmall,
+  .thread-list .thread .created_at,
+  .pagination,
+  .post-content blockquote.small .author .time,
+  .post-content blockquote.simple .author .time,
+  .activity-list .activity .thread-details,
+  span.offline,
+  span.online,
+  .btn-xsmall,
+  .btn-brown,
+  ul.breadcrumbs li:not(:last-of-type)::after,
+  .text-small,
+  .forum-list .forum-listing .forum-details ul.subforums,
+  .post-content blockquote.big .author,
+  .post-content blockquote.small .author a,
+  .post-content blockquote.simple .author,
+  .activity-list .activity .activity-header .title span,
+  .btn-small,
+  ul.breadcrumbs li,
+  .text-large,
+  .list-title,
+  .forum-stats ul li,
+  .profile-card .user-website,
+  .activity-list .activity .activity-header .title,
+  .btn-large,
+  .text-xlarge,
+  .btn-xlarge,
+  .btn,
+  .btn-blue,
+  .btn-blue-outlined,
+  .btn-brown-outlined,
+  .btn-green,
+  .btn-green-outlined,
+  .btn-red,
+  .btn-red-outlined,
+  .btn-ghost {
+    font-size: 15px;
   }
 }
 
-.text-xsmall, .thread-list .thread .created_at, .pagination, .post-content blockquote.small .author .time, .post-content blockquote.simple .author .time, .activity-list .activity .thread-details, span.offline, span.online, .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after {
+.text-xsmall,
+.thread-list .thread .created_at,
+.pagination,
+.post-content blockquote.small .author .time,
+.post-content blockquote.simple .author .time,
+.activity-list .activity .thread-details,
+span.offline,
+span.online,
+.btn-xsmall,
+.btn-brown,
+ul.breadcrumbs li:not(:last-of-type)::after {
   font-size: 13px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text-xsmall, .thread-list .thread .created_at, .pagination, .post-content blockquote.small .author .time, .post-content blockquote.simple .author .time, .activity-list .activity .thread-details, span.offline, span.online, .btn-xsmall, .btn-brown, ul.breadcrumbs li:not(:last-of-type)::after {
-      font-size: 12px;
+  .text-xsmall,
+  .thread-list .thread .created_at,
+  .pagination,
+  .post-content blockquote.small .author .time,
+  .post-content blockquote.simple .author .time,
+  .activity-list .activity .thread-details,
+  span.offline,
+  span.online,
+  .btn-xsmall,
+  .btn-brown,
+  ul.breadcrumbs li:not(:last-of-type)::after {
+    font-size: 12px;
   }
 }
 
-.text-small, .forum-list .forum-listing .forum-details ul.subforums, .post-content blockquote.big .author, .post-content blockquote.small .author a, .post-content blockquote.simple .author, .activity-list .activity .activity-header .title span, .btn-small, ul.breadcrumbs li {
+.text-small,
+.forum-list .forum-listing .forum-details ul.subforums,
+.post-content blockquote.big .author,
+.post-content blockquote.small .author a,
+.post-content blockquote.simple .author,
+.activity-list .activity .activity-header .title span,
+.btn-small,
+ul.breadcrumbs li {
   font-size: 15px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text-small, .forum-list .forum-listing .forum-details ul.subforums, .post-content blockquote.big .author, .post-content blockquote.small .author a, .post-content blockquote.simple .author, .activity-list .activity .activity-header .title span, .btn-small, ul.breadcrumbs li {
-      font-size: 14px;
+  .text-small,
+  .forum-list .forum-listing .forum-details ul.subforums,
+  .post-content blockquote.big .author,
+  .post-content blockquote.small .author a,
+  .post-content blockquote.simple .author,
+  .activity-list .activity .activity-header .title span,
+  .btn-small,
+  ul.breadcrumbs li {
+    font-size: 14px;
   }
 }
 
-.text-large, .list-title, .forum-stats ul li, .profile-card .user-website, .activity-list .activity .activity-header .title, .btn-large {
+.text-large,
+.list-title,
+.forum-stats ul li,
+.profile-card .user-website,
+.activity-list .activity .activity-header .title,
+.btn-large {
   font-size: 18px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text-large, .list-title, .forum-stats ul li, .profile-card .user-website, .activity-list .activity .activity-header .title, .btn-large {
-      font-size: 17px;
+  .text-large,
+  .list-title,
+  .forum-stats ul li,
+  .profile-card .user-website,
+  .activity-list .activity .activity-header .title,
+  .btn-large {
+    font-size: 17px;
   }
 }
 
-.text-xlarge, .btn-xlarge {
+.text-xlarge,
+.btn-xlarge {
   font-size: 22px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .text-xlarge, .btn-xlarge {
-      font-size: 20px;
+  .text-xlarge,
+  .btn-xlarge {
+    font-size: 20px;
   }
 }
 
-.text-bold, .activity-list .activity .activity-header .title {
+.text-bold,
+.activity-list .activity .activity-header .title {
   font-weight: bold;
 }
 
@@ -632,11 +782,14 @@ h2 {
   text-decoration: line-through;
 }
 
-.text-center, .profile-card .stats span, .profile-card .user-website {
+.text-center,
+.profile-card .stats span,
+.profile-card .user-website {
   text-align: center;
 }
 
-.text-left, .activity-list .activity .activity-header .title {
+.text-left,
+.activity-list .activity .activity-header .title {
   text-align: left;
 }
 
@@ -655,7 +808,7 @@ ul {
 
 .navbar {
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
 }
@@ -667,17 +820,20 @@ ul {
   /*height: 100%;*/
 }
 
-.navbar-item, .navbar-mobile-item {
+.navbar-item,
+.navbar-mobile-item {
   display: inline-block;
   border-right: 1px solid #3c4d6a;
   vertical-align: middle;
 }
 
-ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
+ul .navbar-item:last-child,
+ul .navbar-mobile-item:last-child {
   border-right: none;
 }
 
-.navbar-item a, .navbar-mobile-item a {
+.navbar-item a,
+.navbar-mobile-item a {
   color: white;
   padding: 10px 20px;
   text-decoration: none;
@@ -685,68 +841,74 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .navbar-item a, .navbar-mobile-item a {
-      padding: 10px 0px;
+  .navbar-item a,
+  .navbar-mobile-item a {
+    padding: 10px 0px;
   }
 }
 
-.navbar-item a:hover, .navbar-mobile-item a:hover {
-  color: #57AD8D;
-  transition: all .3s ease;
+.navbar-item a:hover,
+.navbar-mobile-item a:hover {
+  color: #57ad8d;
+  transition: all 0.3s ease;
 }
 
-.navbar-item a:active, .navbar-mobile-item a:active {
-  color: #57AD8D;
+.navbar-item a:active,
+.navbar-mobile-item a:active {
+  color: #57ad8d;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .navbar-item, .navbar-mobile-item {
-      display: block;
-      border: none;
-      margin: 20px 0;
+  .navbar-item,
+  .navbar-mobile-item {
+    display: block;
+    border: none;
+    margin: 20px 0;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .navbar {
-      display: none;
-      position: absolute;
-      z-index: 10;
-      padding: 10px 10px 10px;
-      background: #263959;
-      width: 100%;
-      left: 0;
-      top: 60px;
+    display: none;
+    position: absolute;
+    z-index: 10;
+    padding: 10px 10px 10px;
+    background: #263959;
+    width: 100%;
+    left: 0;
+    top: 60px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .navbar-open {
-      display: flex;
-      transition: all 0.6s ease;
-      border-bottom-right-radius: 5px;
-      border-bottom-left-radius: 5px;
+    display: flex;
+    transition: all 0.6s ease;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
   }
 
-  .navbar-open .navbar-item, .navbar-open .navbar-mobile-item {
-      margin: 6px 0;
+  .navbar-open .navbar-item,
+  .navbar-open .navbar-mobile-item {
+    margin: 6px 0;
   }
 
   .navbar-open ul {
-      flex: 1;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      padding-left: 20px;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    padding-left: 20px;
   }
 }
 
-.signs .navbar-item, .signs .navbar-mobile-item {
+.signs .navbar-item,
+.signs .navbar-mobile-item {
   border-right: none;
 }
 
 .a-active {
-  color: #57AD8D;
+  color: #57ad8d;
 }
 
 .icon-profile {
@@ -765,7 +927,7 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
 }
 
 .navbar-user a:hover .icon-profile {
-  transition: all .4s ease;
+  transition: all 0.4s ease;
   transform: rotate(-180deg);
 }
 
@@ -797,7 +959,7 @@ ul .navbar-item:last-child, ul .navbar-mobile-item:last-child {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .btn-hamburger {
-      display: block;
+    display: block;
   }
 }
 
@@ -829,7 +991,7 @@ header > a.logo {
 
 @media (min-width: 240px) and (max-width: 720px) {
   header > a.logo {
-      width: 35px;
+    width: 35px;
   }
 }
 
@@ -840,25 +1002,25 @@ header > a.logo {
 
 @media (min-width: 1360px) {
   .title {
-      font-size: 46px;
+    font-size: 46px;
   }
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .title {
-      font-size: 32px;
+    font-size: 32px;
   }
 }
 
 @media (min-width: 720px) and (max-width: 820px) {
   .title {
-      font-size: 30px;
+    font-size: 30px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .title {
-      font-size: 30px;
+    font-size: 30px;
   }
 }
 
@@ -877,19 +1039,19 @@ header > a.logo {
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .subtitle {
-      font-size: 22px;
+    font-size: 22px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .subtitle {
-      font-size: 20px;
+    font-size: 20px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 400px) {
   .subtitle {
-      font-size: 18px;
+    font-size: 18px;
   }
 }
 
@@ -903,11 +1065,11 @@ header > a.logo {
 
 @media (min-width: 240px) and (max-width: 720px) {
   #user-dropdown {
-      position: relative;
-      width: 100%;
-      right: 0;
-      z-index: 10;
-      top: 98px;
+    position: relative;
+    width: 100%;
+    right: 0;
+    z-index: 10;
+    top: 98px;
   }
 }
 
@@ -919,25 +1081,29 @@ header > a.logo {
   display: block;
 }
 
-.dropdown-menu, #user-dropdown > .dropdown-menu {
+.dropdown-menu,
+#user-dropdown > .dropdown-menu {
   display: block;
   background: white;
   padding: 20px;
   position: relative;
 }
 
-.dropdown-menu-item, #user-dropdown > .dropdown-menu > .dropdown-menu-item {
+.dropdown-menu-item,
+#user-dropdown > .dropdown-menu > .dropdown-menu-item {
   margin-bottom: 5px;
 }
 
-.dropdown-menu-item a, #user-dropdown > .dropdown-menu > .dropdown-menu-item a {
+.dropdown-menu-item a,
+#user-dropdown > .dropdown-menu > .dropdown-menu-item a {
   display: block;
-  color: #57AD8D;
+  color: #57ad8d;
   font-size: 16px;
   transition: all ease 0.6s;
 }
 
-.dropdown-menu-item a:hover, #user-dropdown > .dropdown-menu > .dropdown-menu-item a:hover {
+.dropdown-menu-item a:hover,
+#user-dropdown > .dropdown-menu > .dropdown-menu-item a:hover {
   color: #41826a;
 }
 
@@ -955,14 +1121,14 @@ header > a.logo {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .triangle-drop {
-      left: 5%;
+    left: 5%;
   }
 }
 
 #user-dropdown a {
-  color: #57AD8D;
+  color: #57ad8d;
   text-decoration: none;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 #user-dropdown a:hover {
@@ -995,7 +1161,7 @@ header > a.logo {
 
 .mentionsList li:hover {
   cursor: pointer;
-  background-color: #57AD8D;
+  background-color: #57ad8d;
 }
 
 .mentionsList li:not(:last-of-type) {
@@ -1006,7 +1172,7 @@ header > a.logo {
   border-bottom: solid 8px #263959;
   border-left: solid 8px transparent;
   border-right: solid 8px transparent;
-  content: "";
+  content: '';
   display: inline-block;
   left: 52px;
   position: absolute;
@@ -1044,7 +1210,7 @@ form {
 
 .form-input:disabled {
   cursor: no-drop;
-  background: #F5F8FE;
+  background: #f5f8fe;
   color: #bbbbbb;
 }
 
@@ -1066,7 +1232,7 @@ form {
 }
 
 .form-input:invalid {
-  border-color: #C82543;
+  border-color: #c82543;
 }
 
 .form-input:invalid ~ .form-error {
@@ -1075,8 +1241,8 @@ form {
 
 @media (min-width: 240px) and (max-width: 400px) {
   .form-input {
-      padding-left: 10px;
-      height: 50px;
+    padding-left: 10px;
+    height: 50px;
   }
 }
 
@@ -1088,7 +1254,7 @@ textarea.form-input {
 }
 
 .input-error {
-  border-color: #C82543;
+  border-color: #c82543;
 }
 
 .input-error ~ .form-error {
@@ -1097,7 +1263,7 @@ textarea.form-input {
 
 .form-error {
   background: #f4d3d9;
-  color: #C82543;
+  color: #c82543;
   font-size: 0.8em;
   float: left;
   border-radius: 100px;
@@ -1107,7 +1273,7 @@ textarea.form-input {
 
 @media (min-width: 240px) and (max-width: 400px) {
   .form-error {
-      width: 100%;
+    width: 100%;
   }
 }
 
@@ -1117,23 +1283,25 @@ textarea.form-input {
   display: inline-block;
 }
 
-.form-label, .form-group > label {
+.form-label,
+.form-group > label {
   margin-bottom: 5px;
   display: inline-block;
   color: #767676;
 }
 
-.form-label-password, .form-group > label-password {
+.form-label-password,
+.form-group > label-password {
   margin-bottom: 0px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .form-btn {
-      width: 100%;
+    width: 100%;
   }
 }
 
-input[type="submit"],
+input[type='submit'],
 button {
   -webkit-appearance: none;
   font-size: 18px;
@@ -1163,8 +1331,8 @@ button a {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .form-2cols .form-group {
-      flex-basis: 100%;
-      margin-right: 0;
+    flex-basis: 100%;
+    margin-right: 0;
   }
 }
 
@@ -1174,29 +1342,82 @@ button {
   appearance: none;
 }
 
-.btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
+.btn,
+.btn-blue,
+.btn-blue-outlined,
+.btn-brown,
+.btn-brown-outlined,
+.btn-green,
+.btn-green-outlined,
+.btn-red,
+.btn-red-outlined,
+.btn-ghost {
   padding: 15px 30px;
   border-radius: 5px;
   border: none;
   display: inline-block;
-  outline: 0;
+  /* outline: #263959 dashed 1px;
+  outline-offset: .5rem;
+  margin-right: 2rem !important; */
 }
-
-.btn:hover, .btn-blue:hover, .btn-blue-outlined:hover, .btn-brown:hover, .btn-brown-outlined:hover, .btn-green:hover, .btn-green-outlined:hover, .btn-red:hover, .btn-red-outlined:hover, .btn-ghost:hover {
+.btn:focus {
+  outline: #263959 dashed 1px;
+  outline-offset: 0.5rem;
+  margin-right: 2rem !important;
+}
+.btn:hover,
+.btn-blue:hover,
+.btn-blue-outlined:hover,
+.btn-brown:hover,
+.btn-brown-outlined:hover,
+.btn-green:hover,
+.btn-green-outlined:hover,
+.btn-red:hover,
+.btn-red-outlined:hover,
+.btn-ghost:hover {
   transition: all 0.4s ease;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .btn, .btn-blue, .btn-blue-outlined, .btn-brown, .btn-brown-outlined, .btn-green, .btn-green-outlined, .btn-red, .btn-red-outlined, .btn-ghost {
-      padding: 10px 20px;
+  .btn,
+  .btn-blue,
+  .btn-blue-outlined,
+  .btn-brown,
+  .btn-brown-outlined,
+  .btn-green,
+  .btn-green-outlined,
+  .btn-red,
+  .btn-red-outlined,
+  .btn-ghost {
+    padding: 10px 20px;
   }
 }
 
-.btn:disabled, .btn-blue:disabled, .btn-blue-outlined:disabled, .btn-brown:disabled, .btn-brown-outlined:disabled, .btn-green:disabled, .btn-green-outlined:disabled, .btn-red:disabled, .btn-red-outlined:disabled, .btn-ghost:disabled, .btn-disabled {
+.btn:disabled,
+.btn-blue:disabled,
+.btn-blue-outlined:disabled,
+.btn-brown:disabled,
+.btn-brown-outlined:disabled,
+.btn-green:disabled,
+.btn-green-outlined:disabled,
+.btn-red:disabled,
+.btn-red-outlined:disabled,
+.btn-ghost:disabled,
+.btn-disabled {
   cursor: default;
 }
 
-.btn:disabled:hover, .btn-blue:disabled:hover, .btn-blue-outlined:disabled:hover, .btn-brown:disabled:hover, .btn-brown-outlined:disabled:hover, .btn-green:disabled:hover, .btn-green-outlined:disabled:hover, .btn-red:disabled:hover, .btn-red-outlined:disabled:hover, .btn-ghost:disabled:hover, .btn-disabled:hover {
+.btn:disabled:hover,
+.btn-blue:disabled:hover,
+.btn-blue-outlined:disabled:hover,
+.btn-brown:disabled:hover,
+.btn-brown-outlined:disabled:hover,
+.btn-green:disabled:hover,
+.btn-green-outlined:disabled:hover,
+.btn-red:disabled:hover,
+.btn-red-outlined:disabled:hover,
+.btn-ghost:disabled:hover,
+.btn-disabled:hover {
   cursor: default;
   color: white;
 }
@@ -1224,7 +1445,7 @@ button {
 .btn-circle {
   height: 60px;
   width: 60px;
-  background: #C82543;
+  background: #c82543;
   border-radius: 50%;
   padding: 0px;
   font-size: 36px;
@@ -1264,9 +1485,9 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .btn-circle {
-      height: 45px;
-      width: 45px;
-      padding-top: 14px;
+    height: 45px;
+    width: 45px;
+    padding-top: 14px;
   }
 }
 
@@ -1312,7 +1533,7 @@ button {
 
 .btn-green {
   color: white;
-  background: #57AD8D;
+  background: #57ad8d;
 }
 
 .btn-green:hover:not(:disabled):not(.btn-disabled) {
@@ -1321,18 +1542,18 @@ button {
 }
 
 .btn-green-outlined {
-  color: #57AD8D;
-  box-shadow: inset 0px 0px 0px 1.6px #57AD8D;
+  color: #57ad8d;
+  box-shadow: inset 0px 0px 0px 1.6px #57ad8d;
 }
 
 .btn-green-outlined:hover {
   color: white;
-  background: #57AD8D;
+  background: #57ad8d;
 }
 
 .btn-red {
   color: white;
-  background: #C82543;
+  background: #c82543;
 }
 
 .btn-red:hover:not(:disabled):not(.btn-disabled) {
@@ -1341,18 +1562,18 @@ button {
 }
 
 .btn-red-outlined {
-  color: #C82543;
-  box-shadow: inset 0px 0px 0px 1.6px #C82543;
+  color: #c82543;
+  box-shadow: inset 0px 0px 0px 1.6px #c82543;
 }
 
 .btn-red-outlined:hover {
   color: white;
-  background: #C82543;
+  background: #c82543;
 }
 
 .btn-green {
   color: white;
-  background: #57AD8D;
+  background: #57ad8d;
 }
 
 .btn-green:hover:not(:disabled):not(.btn-disabled) {
@@ -1362,7 +1583,7 @@ button {
 
 .btn-red {
   color: white;
-  background: #C82543;
+  background: #c82543;
 }
 
 .btn-red:hover:not(:disabled):not(.btn-disabled) {
@@ -1404,9 +1625,9 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .btn-input {
-      position: static;
-      margin-top: 10px;
-      width: 100%;
+    position: static;
+    margin-top: 10px;
+    width: 100%;
   }
 }
 
@@ -1439,8 +1660,8 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .icon-arrow {
-      height: 14px;
-      width: 21px;
+    height: 14px;
+    width: 21px;
   }
 }
 
@@ -1453,13 +1674,13 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .icon-arrow-left {
-      height: 14px;
-      width: 21px;
+    height: 14px;
+    width: 21px;
   }
 }
 
 .link {
-  color: #57AD8D;
+  color: #57ad8d;
   text-decoration: underline;
   transition: all ease 0.4s;
 }
@@ -1472,7 +1693,8 @@ button {
   outline: 0;
 }
 
-.form-actions, .btn-group {
+.form-actions,
+.btn-group {
   display: flex;
   justify-content: flex-end;
   flex-basis: 100%;
@@ -1480,18 +1702,21 @@ button {
   margin-bottom: 10px;
 }
 
-.form-actions > *:not(:last-child), .btn-group > *:not(:last-child) {
+.form-actions > *:not(:last-child),
+.btn-group > *:not(:last-child) {
   margin-right: 10px;
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
-  .form-actions, .btn-group {
-      flex-wrap: wrap;
+  .form-actions,
+  .btn-group {
+    flex-wrap: wrap;
   }
 
-  .form-actions > *:not(.btn-ghost), .btn-group > *:not(.btn-ghost) {
-      flex: 1 1;
-      margin-bottom: 5px;
+  .form-actions > *:not(.btn-ghost),
+  .btn-group > *:not(.btn-ghost) {
+    flex: 1 1;
+    margin-bottom: 5px;
   }
 }
 
@@ -1514,11 +1739,11 @@ button {
 }
 
 .alert-error {
-  background: #C82543;
+  background: #c82543;
 }
 
 .alert-success {
-  background: #57AD8D;
+  background: #57ad8d;
 }
 
 .alert-info {
@@ -1527,7 +1752,7 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .alert {
-      padding: 10px;
+    padding: 10px;
   }
 }
 
@@ -1539,8 +1764,8 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .close {
-      align-self: flex-start;
-      margin-top: 4px;
+    align-self: flex-start;
+    margin-top: 4px;
   }
 }
 
@@ -1599,7 +1824,7 @@ button {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .card {
-      margin-bottom: 20px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1612,20 +1837,20 @@ button {
 
 @media (min-width: 1360px) {
   .card-form {
-      padding: 60px;
+    padding: 60px;
   }
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .card-form {
-      padding: 40px;
+    padding: 40px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .card-form {
-      padding: 40px 20px;
-      margin-top: 10px;
+    padding: 40px 20px;
+    margin-top: 10px;
   }
 }
 
@@ -1649,16 +1874,16 @@ button {
 
 @media (min-width: 1024px) {
   .sidebar {
-      display: flex;
-      flex-basis: 29%;
-      margin: 0 0.5%;
-      margin-top: 118px;
-      flex-direction: column;
+    display: flex;
+    flex-basis: 29%;
+    margin: 0 0.5%;
+    margin-top: 118px;
+    flex-direction: column;
   }
 
   .sidebar .widget {
-      background: white;
-      margin-bottom: 10px;
+    background: white;
+    margin-bottom: 10px;
   }
 }
 
@@ -1696,7 +1921,7 @@ ul.breadcrumbs li:not(:last-of-type)::after {
 }
 
 ul.breadcrumbs li a {
-  color: #57AD8D;
+  color: #57ad8d;
   text-decoration: none;
   opacity: 0.7;
 }
@@ -1715,7 +1940,7 @@ ul.breadcrumbs li a:hover {
 
 @media (min-width: 240px) and (max-width: 720px) {
   #moderation.justify-right {
-      margin: 0;
+    margin: 0;
   }
 }
 
@@ -1725,7 +1950,7 @@ ul.breadcrumbs li a:hover {
   flex-wrap: wrap;
   position: fixed;
   bottom: 20px;
-  box-shadow: 0px 0px 300px #ADADAD;
+  box-shadow: 0px 0px 300px #adadad;
   padding: 0 5px;
   border-radius: 5px;
   background-color: #313131;
@@ -1781,32 +2006,32 @@ ul.breadcrumbs li a:hover {
 
 @media (min-width: 240px) and (max-width: 720px) {
   #moderation ul.toolbar {
-      position: fixed;
-      bottom: 0;
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+    position: fixed;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   #moderation ul.toolbar li {
-      flex-basis: 100%;
-      margin: 0;
-      text-align: center;
-      border-right: none !important;
+    flex-basis: 100%;
+    margin: 0;
+    text-align: center;
+    border-right: none !important;
   }
 
   #moderation ul.toolbar li a {
-      display: block;
-      border: none;
-      font-size: 18px;
-      padding: 7px 0;
+    display: block;
+    border: none;
+    font-size: 18px;
+    padding: 7px 0;
   }
 
   #moderation ul.toolbar li.close-toolbar .fa::before {
-      content: '\f107';
-      font-family: FontAwesome;
+    content: '\f107';
+    font-family: FontAwesome;
   }
 }
 
@@ -1818,7 +2043,8 @@ ul.breadcrumbs li a:hover {
   opacity: 1;
 }
 
-#moderation ul.toolbar-collapsed li, #moderation ul.toolbar-collapsed li.close-toolbar {
+#moderation ul.toolbar-collapsed li,
+#moderation ul.toolbar-collapsed li.close-toolbar {
   display: none;
 }
 
@@ -1833,34 +2059,34 @@ ul.breadcrumbs li a:hover {
 
 @media (min-width: 240px) and (max-width: 720px) {
   #moderation ul.toolbar-collapsed {
-      border-radius: 0;
+    border-radius: 0;
   }
 
   #moderation ul.toolbar-collapsed li.open-toolbar {
-      display: inline-block;
-      border: none;
+    display: inline-block;
+    border: none;
   }
 
   #moderation ul.toolbar-collapsed li.open-toolbar a {
-      padding: 0;
-      font-size: 0;
-      line-height: 0.95;
+    padding: 0;
+    font-size: 0;
+    line-height: 0.95;
   }
 
   #moderation ul.toolbar-collapsed li.open-toolbar a .fa {
-      margin: 0;
+    margin: 0;
   }
 
   #moderation ul.toolbar-collapsed li.open-toolbar a::before {
-      content: '\f106';
-      font-family: FontAwesome;
-      font-size: 30px;
+    content: '\f106';
+    font-family: FontAwesome;
+    font-size: 30px;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   body {
-      padding-bottom: 20px;
+    padding-bottom: 20px;
   }
 }
 
@@ -1885,7 +2111,7 @@ ul.breadcrumbs li a:hover {
   width: 50vw;
   max-width: 550px;
   min-height: 25vh;
-  background: #F5F8FE;
+  background: #f5f8fe;
   background: #fcfdff;
   background-color: white;
   border-radius: 8px;
@@ -1893,9 +2119,9 @@ ul.breadcrumbs li a:hover {
 
 @media screen and (min-width: 240px) and (max-width: 900px) {
   .modal-container .modal {
-      top: 5vh;
-      width: 95vw;
-      min-height: 40vh;
+    top: 5vh;
+    width: 95vw;
+    min-height: 40vh;
   }
 }
 
@@ -1908,7 +2134,8 @@ ul.breadcrumbs li a:hover {
   padding: 0;
 }
 
-.modal-container .modal .modal-header, .modal-container .modal .modal-footer {
+.modal-container .modal .modal-header,
+.modal-container .modal .modal-footer {
   padding: 15px;
   flex-basis: 100%;
 }
@@ -1939,7 +2166,7 @@ a.close {
   top: 10px;
   color: #263959;
   font-size: 22px;
-  opacity: .7;
+  opacity: 0.7;
 }
 
 a.close:hover {
@@ -1958,22 +2185,26 @@ body {
 
 @media (min-width: 240px) and (max-width: 720px) {
   body {
-      font-size: 15px;
+    font-size: 15px;
   }
 }
 
 body a {
-  color: #57AD8D;
+  color: #57ad8d;
   text-decoration: none;
 }
 
 body a:hover {
   color: #41826a;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-weight: 700;
   margin-bottom: 10px;
   margin-top: 0;
@@ -2010,7 +2241,7 @@ figure {
 
 @media (min-width: 1360px) {
   .flex-column {
-      max-width: 1300px;
+    max-width: 1300px;
   }
 }
 
@@ -2024,7 +2255,7 @@ figure {
 
 @media (min-width: 1360px) {
   .flex-grid {
-      max-width: 1300px;
+    max-width: 1300px;
   }
 }
 
@@ -2042,7 +2273,7 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col {
-      margin: 0 4%;
+    margin: 0 4%;
   }
 }
 
@@ -2053,20 +2284,20 @@ figure {
 
 @media (min-width: 1360px) {
   .col-70 {
-      flex-basis: 70%;
+    flex-basis: 70%;
   }
 }
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .col-70 {
-      flex-basis: 80%;
+    flex-basis: 80%;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-70 {
-      flex-basis: 96%;
-      margin: 0 4%;
+    flex-basis: 96%;
+    margin: 0 4%;
   }
 }
 
@@ -2077,7 +2308,7 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-2 {
-      flex-basis: 96%;
+    flex-basis: 96%;
   }
 }
 
@@ -2087,15 +2318,15 @@ figure {
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .col-3 {
-      flex-basis: 96%;
-      margin: 4% 2%;
+    flex-basis: 96%;
+    margin: 4% 2%;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-3 {
-      flex-basis: 96%;
-      margin: 4% 4%;
+    flex-basis: 96%;
+    margin: 4% 4%;
   }
 }
 
@@ -2105,7 +2336,7 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-4 {
-      flex-basis: 46%;
+    flex-basis: 46%;
   }
 }
 
@@ -2115,7 +2346,7 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-5 {
-      flex-basis: 46%;
+    flex-basis: 46%;
   }
 }
 
@@ -2125,15 +2356,15 @@ figure {
 
 @media (min-width: 600px) and (max-width: 1023px) {
   .col-7 {
-      flex-basis: 96%;
-      margin: 4% 2%;
+    flex-basis: 96%;
+    margin: 4% 2%;
   }
 }
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-7 {
-      flex-basis: 96%;
-      margin: 4% 4%;
+    flex-basis: 96%;
+    margin: 4% 4%;
   }
 }
 
@@ -2148,7 +2379,7 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .container {
-      width: 96%;
+    width: 96%;
   }
 }
 
@@ -2159,8 +2390,8 @@ figure {
 
 @media (max-width: 820px) {
   .col-full {
-      flex-basis: 98%;
-      margin: 0 1%;
+    flex-basis: 98%;
+    margin: 0 1%;
   }
 }
 
@@ -2171,8 +2402,8 @@ figure {
 
 @media (max-width: 1024px) {
   .col-large {
-      flex-basis: 98%;
-      margin: 0 1%;
+    flex-basis: 98%;
+    margin: 0 1%;
   }
 }
 
@@ -2183,8 +2414,8 @@ figure {
 
 @media (min-width: 240px) and (max-width: 720px) {
   .col-small {
-      flex-basis: 98%;
-      margin: 0 1%;
+    flex-basis: 98%;
+    margin: 0 1%;
   }
 }
 
@@ -2210,32 +2441,38 @@ figure {
 }
 
 @media (max-width: 820px) {
-  .desktop-only, .forum-list .forum-listing .threads-count, .forum-list .forum-listing .last-thread, .forum-stats, .thread-list .thread .activity, .navbar-user {
-      display: none;
+  .desktop-only,
+  .forum-list .forum-listing .threads-count,
+  .forum-list .forum-listing .last-thread,
+  .forum-stats,
+  .thread-list .thread .activity,
+  .navbar-user {
+    display: none;
   }
 }
 
 @media (min-width: 820px) {
-  .mobile-only, .navbar-mobile-item {
-      display: none;
+  .mobile-only,
+  .navbar-mobile-item {
+    display: none;
   }
 }
 
 @media (max-width: 720px) {
   .hide-mobile {
-      display: none;
+    display: none;
   }
 }
 
 @media (min-width: 720px) and (max-width: 820px) {
   .hide-tablet {
-      display: none;
+    display: none;
   }
 }
 
 @media (max-width: 720px) {
   .hide-desktop {
-      display: none;
+    display: none;
   }
 }
 
@@ -2255,11 +2492,24 @@ section {
   color: white;
 }
 
-.link-unstyled, ul.breadcrumbs li a {
+.link-unstyled,
+ul.breadcrumbs li a {
   color: inherit;
 }
 
-.faded, .btn:disabled, .btn-blue:disabled, .btn-blue-outlined:disabled, .btn-brown:disabled, .btn-brown-outlined:disabled, .btn-green:disabled, .btn-green-outlined:disabled, .btn-red:disabled, .btn-red-outlined:disabled, .btn-ghost:disabled, .btn-disabled, a > img:hover {
+.faded,
+.btn:disabled,
+.btn-blue:disabled,
+.btn-blue-outlined:disabled,
+.btn-brown:disabled,
+.btn-brown-outlined:disabled,
+.btn-green:disabled,
+.btn-green-outlined:disabled,
+.btn-red:disabled,
+.btn-red-outlined:disabled,
+.btn-ghost:disabled,
+.btn-disabled,
+a > img:hover {
   opacity: 0.8;
 }
 
@@ -2267,7 +2517,7 @@ hr {
   border: 0;
   height: 1px;
   background: #333;
-  background-image: linear-gradient(to right, #F7F9FE, #D1D3D7, #F7F9FE);
+  background-image: linear-gradient(to right, #f7f9fe, #d1d3d7, #f7f9fe);
   margin-bottom: 20px;
 }
 
@@ -2276,6 +2526,6 @@ hr {
 }
 
 #app {
-  background: #F5F8FE;
+  background: #f5f8fe;
   min-height: 100vh;
 }
