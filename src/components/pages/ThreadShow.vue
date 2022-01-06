@@ -128,6 +128,8 @@ export default {
     //     })
 
     //   console.log(docRef)
+
+
     //   // fetch the thread
     firebase
       .firestore()
@@ -138,7 +140,9 @@ export default {
         this.$store.commit('setThread', { thread })
         console.log('store', thread)
 
-        //       // fetch the user
+
+
+        // fetch the user
         firebase
           .firestore()
           .collection('users')
@@ -149,6 +153,7 @@ export default {
           })
 
         //       // fetch the posts
+        // fetch the posts
         thread.posts.forEach((postId) => {
           firebase
             .firestore()
