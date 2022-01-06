@@ -10,7 +10,7 @@
       >
     </h1>
     <p>
-      By <a href="#" class="link-unstyled">{{ thread.author.name }}</a
+      By <a href="#" class="link-unstyled">{{ thread.author?.name }}</a
       >, <AppDate :timestamp="thread.publishedAt" />.
       <span
         style="float: right; margin-top: 2px;"
@@ -27,7 +27,8 @@
 <script>
 import PostList from '@/components/PostList'
 import PostEditor from '@/components/PostEditor'
-// import { findById } from '@/helpers'
+import firebase from 'firebase/app'
+
 export default {
   components: {
     PostList,
@@ -63,6 +64,111 @@ export default {
       }
       this.$store.dispatch('createPost', post)
     }
+  },
+  created() {
+    //   //  testing
+    //   let db = firebase.firestore()
+    //   var citiesRef = db.collection('cities')
+
+    //   citiesRef.doc('SF').set({
+    //     name: 'San Francisco',
+    //     state: 'CA',
+    //     country: 'USA',
+    //     capital: false,
+    //     population: 860000,
+    //     regions: ['west_coast', 'norcal']
+    //   })
+    //   citiesRef.doc('LA').set({
+    //     name: 'Los Angeles',
+    //     state: 'CA',
+    //     country: 'USA',
+    //     capital: false,
+    //     population: 3900000,
+    //     regions: ['west_coast', 'socal']
+    //   })
+    //   citiesRef.doc('DC').set({
+    //     name: 'Washington, D.C.',
+    //     state: null,
+    //     country: 'USA',
+    //     capital: true,
+    //     population: 680000,
+    //     regions: ['east_coast']
+    //   })
+    //   citiesRef.doc('TOK').set({
+    //     name: 'Tokyo',
+    //     state: null,
+    //     country: 'Japan',
+    //     capital: true,
+    //     population: 9000000,
+    //     regions: ['kanto', 'honshu']
+    //   })
+    //   citiesRef.doc('BJ').set({
+    //     name: 'Beijing',
+    //     state: null,
+    //     country: 'China',
+    //     capital: true,
+    //     population: 21500000,
+    //     regions: ['jingjinji', 'hebei']
+    //   })
+
+    //   var docRef = db.collection('cities').doc('SF')
+
+    //   docRef
+    //     .get()
+    //     .then((doc) => {
+    //       if (doc.exists) {
+    //         console.log('Document data:', doc.data())
+    //       } else {
+    //         // doc.data() will be undefined in this case
+    //         console.log('No such document!')
+    //       }
+    //     })
+    //     .catch((error) => {
+    //       console.log('Error getting document:', error)
+    //     })
+
+    //   console.log(docRef)
+    //   // fetch the thread
+    firebase
+      .firestore()
+      .collection('threads')
+      .doc(this.id)
+      .onSnapshot((doc) => {
+        const thread = { ...doc.data(), id: doc.id }
+        this.$store.commit('setThread', { thread })
+        console.log('store', thread)
+
+        //       // fetch the user
+        firebase
+          .firestore()
+          .collection('users')
+          .doc(thread.userId)
+          .onSnapshot((doc) => {
+            const user = { ...doc.data(), id: doc.id }
+            this.$store.commit('setUser', { user })
+          })
+
+        //       // fetch the posts
+        thread.posts.forEach((postId) => {
+          firebase
+            .firestore()
+            .collection('posts')
+            .doc(postId)
+            .onSnapshot((doc) => {
+              const post = { ...doc.data(), id: doc.id }
+              this.$store.commit('setPost', { post })
+              // fetch the user for each post
+              firebase
+                .firestore()
+                .collection('users')
+                .doc(post.userId)
+                .onSnapshot((doc) => {
+                  const user = { ...doc.data(), id: doc.id }
+                  this.$store.commit('setUser', { user })
+                })
+            })
+        })
+      })
   }
 }
 </script>

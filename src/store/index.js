@@ -1,10 +1,15 @@
 import { createStore } from 'vuex'
-import sourceData from '@/data'
+// import sourceData from '@/data'
 import { findById, upsert } from '@/helpers'
 
 export default createStore({
   state: {
-    ...sourceData,
+    // ...sourceData,
+    categories: [],
+    forums: [],
+    threads: [],
+    posts: [],
+    users: [],
     authId: 'VXjpr2WHa8Ux4Bnggym8QFLdv5C3'
   },
   getters: {
@@ -60,9 +65,8 @@ export default createStore({
       parent: 'threads',
       child: 'posts'
     }),
-    setUser(state, { user, userId }) {
-      const userIndex = state.users.findIndex((user) => user.id === userId)
-      state.users[userIndex] = user
+    setUser(state, { user }) {
+      upsert(state.users, user)
     },
     setThread(state, { thread }) {
       upsert(state.threads, thread)
