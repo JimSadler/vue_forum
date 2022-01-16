@@ -27,7 +27,10 @@
 <script>
 import PostList from '@/components/PostList'
 import PostEditor from '@/components/PostEditor'
+<<<<<<< HEAD
 import { mapActions } from 'vuex'
+=======
+>>>>>>> main
 
 export default {
   components: {
@@ -68,6 +71,7 @@ export default {
   },
   async created() {
     // fetch the thread
+<<<<<<< HEAD
     const thread = await this.fetchThread({ id: this.id })
 
     // fetch the posts
@@ -77,6 +81,18 @@ export default {
     // fetch the users associated with the posts
     const users = posts.map((post) => post.userId).concat(thread.userId)
     this.fetchUsers({ ids: users })
+=======
+    const thread = this.$store.dispatch('fetchThread', { id: this.id })
+
+    // fetch the user
+    this.$store.dispatch('fetchUser', { id: thread.userId })
+
+    // fetch the posts
+    thread.posts.forEach(async (postId) => {
+      const post = await this.$store.dispatch('fetchPost', { id: postId })
+      this.$store.dispatch('fetchUser', { id: post.userId })
+    })
+>>>>>>> main
   }
 }
 </script>
