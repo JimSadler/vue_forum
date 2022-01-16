@@ -7,8 +7,9 @@ import Forum from '@/components/pages/Forum'
 import Category from '@/components/pages/Category'
 import { createRouter, createWebHistory } from 'vue-router'
 import Profile from '@/components/pages/Profile'
-import sourceData from '@/data.json'
-import { findById } from '@/helpers'
+import store from '../store'
+// import sourceData from '@/data.json'
+// import { findById } from '@/helpers'
 const routes = [
   {
     path: '/',
@@ -43,24 +44,24 @@ const routes = [
     path: '/thread/:id',
     name: 'ThreadShow',
     component: ThreadShow,
-    props: true,
-    beforeEnter(to, from, next) {
-      // check if thread exists
-      const threadExists = findById(sourceData.threads, to.params.id)
-      // if it exists continue
-      if (threadExists) {
-        return next()
-      } else {
-        next({
-          name: 'NotFound',
-          // preserve current path and remove the first char to avoid the target URL starting with `//`
-          params: { pathMatch: to.path.substring(1).split('/') },
-          // preserve existing query and hash if any
-          query: to.query,
-          hash: to.hash
-        })
-      }
-    }
+    props: true
+    // beforeEnter(to, from, next) {
+    //   // check if thread exists
+    //   const threadExists = findById(sourceData.threads, to.params.id)
+    //   // if it exists continue
+    //   if (threadExists) {
+    //     return next()
+    //   } else {
+    //     next({
+    //       name: 'NotFound',
+    //       // preserve current path and remove the first char to avoid the target URL starting with `//`
+    //       params: { pathMatch: to.path.substring(1).split('/') },
+    //       // preserve existing query and hash if any
+    //       query: to.query,
+    //       hash: to.hash
+    //     })
+    //   }
+    // }
   },
   {
     path: '/forum/:forumId/thread/create',
@@ -80,8 +81,7 @@ const routes = [
     component: NotFound
   }
 ]
-
-export default createRouter({
+const router = createRouter({
   history: createWebHistory(),
   routes,
   scrollBehavior(to) {
@@ -91,3 +91,7 @@ export default createRouter({
     return scroll
   }
 })
+router.beforeEach(() => {
+  store.dispatch('unsubscribeAllSnapshots')
+})
+export default router
