@@ -5,6 +5,9 @@ import ThreadEdit from '@/components/pages/ThreadEdit'
 import NotFound from '@/components/pages/NotFound'
 import Forum from '@/components/pages/Forum'
 import Category from '@/components/pages/Category'
+import Register from '@/components/pages/Register'
+import SignIn from '@/components/pages/SignIn'
+
 import { createRouter, createWebHistory } from 'vue-router'
 import Profile from '@/components/pages/Profile'
 import store from '../store'
@@ -74,6 +77,16 @@ const routes = [
     name: 'ThreadEdit',
     component: ThreadEdit,
     props: true
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
+    component: SignIn
   },
   {
     path: '/:pathMatch(.*)*',

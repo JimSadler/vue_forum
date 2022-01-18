@@ -1,8 +1,8 @@
 module.exports = {
-  apiKey: 'AIzaSyAvgO9DJirrTCePJpQGG3TmBjwCqIDtD7o',
-  authDomain: 'vueforum-98109.firebaseapp.com',
-  projectId: 'vueforum-98109',
-  storageBucket: 'vueforum-98109.appspot.com',
-  messagingSenderId: '691482465709',
-  appId: '1:691482465709:web:82573faee75f500fc07d24'
+  apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
+  authDomain: process.env.VUE_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.VUE_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.VUE_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.VUE_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.VUE_APP_FIREBASE_APP_ID
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="col-large push-top">
+  <div v-if="asyncDataStatus_ready" class="col-large push-top">
     <h1>
       {{ thread.title }}
       <router-link
@@ -12,11 +12,8 @@
     <p>
       By <a href="#" class="link-unstyled">{{ thread.author?.name }}</a
       >, <AppDate :timestamp="thread.publishedAt" />.
-      <span
-        style="float: right; margin-top: 2px;"
-        class="hide-mobile text-faded text-small"
-        >{{ thread.repliesCount }} replies by
-        {{ thread.contributorsCount }} contributors</span
+      <span style="float: right; margin-top: 2px;" class="hide-mobile text-faded text-small"
+        >{{ thread.repliesCount }} replies by {{ thread.contributorsCount }} contributors</span
       >
     </p>
     <post-list :posts="threadPosts"></post-list>
@@ -27,16 +24,15 @@
 <script>
 import PostList from '@/components/PostList'
 import PostEditor from '@/components/PostEditor'
-<<<<<<< HEAD
 import { mapActions } from 'vuex'
-=======
->>>>>>> main
+import asyncDataStatus from '../../mixins/asyncDataStatus'
 
 export default {
   components: {
     PostList,
     PostEditor
   },
+  mixins: [asyncDataStatus],
   name: 'ThreadShow',
   props: {
     id: {
@@ -56,7 +52,7 @@ export default {
       return this.$store.getters.thread(this.id) // also available under this.$route.params.id
     },
     threadPosts() {
-      return this.posts.filter((post) => post.threadId === this.id)
+      return this.posts.filter(post => post.threadId === this.id)
     }
   },
   methods: {
@@ -71,7 +67,6 @@ export default {
   },
   async created() {
     // fetch the thread
-<<<<<<< HEAD
     const thread = await this.fetchThread({ id: this.id })
 
     // fetch the posts
@@ -79,20 +74,9 @@ export default {
       ids: thread.posts
     })
     // fetch the users associated with the posts
-    const users = posts.map((post) => post.userId).concat(thread.userId)
-    this.fetchUsers({ ids: users })
-=======
-    const thread = this.$store.dispatch('fetchThread', { id: this.id })
-
-    // fetch the user
-    this.$store.dispatch('fetchUser', { id: thread.userId })
-
-    // fetch the posts
-    thread.posts.forEach(async (postId) => {
-      const post = await this.$store.dispatch('fetchPost', { id: postId })
-      this.$store.dispatch('fetchUser', { id: post.userId })
-    })
->>>>>>> main
+    const users = posts.map(post => post.userId).concat(thread.userId)
+    await this.fetchUsers({ ids: users })
+    this.asyncDataStatus_fetched()
   }
 }
 </script>
