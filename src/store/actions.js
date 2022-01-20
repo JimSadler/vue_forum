@@ -222,6 +222,7 @@ export default {
         .collection(resource)
         .doc(id)
         .onSnapshot(doc => {
+          // console.log('on snapshot', resource, doc.data())
           const item = { ...doc.data(), id: doc.id }
           commit('setItem', { resource, item })
           resolve(item)
