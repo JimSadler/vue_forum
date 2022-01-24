@@ -4,7 +4,14 @@
       Editing <i>{{ thread.title }}</i>
     </h1>
 
-    <ThreadEditor :title="thread.title" :text="text" @save="save" @cancel="cancel" />
+    <ThreadEditor
+      :title="thread.title"
+      :text="text"
+      @save="save"
+      @cancel="cancel"
+      @dirty="formIsDirty = true"
+      @clean="formIsDirty = false"
+    />
   </div>
 </template>
 <script>
@@ -44,6 +51,14 @@ export default {
     },
     cancel() {
       this.$router.push({ name: 'ThreadShow', params: { id: this.id } })
+    }
+  },
+  beforeRouteLeave() {
+    if (this.formIsDirty) {
+      const confirmed = window.confirm(
+        'Are you sure you want to leave? Unsaved changes will be lost'
+      )
+      if (!confirmed) return false
     }
   },
   async created() {

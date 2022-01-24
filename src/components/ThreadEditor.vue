@@ -3,13 +3,7 @@
     <form @submit.prevent="save">
       <div class="form-group">
         <label for="thread_title">Title:</label>
-        <input
-          v-model="form.title"
-          type="text"
-          id="thread_title"
-          class="form-input"
-          name="title"
-        />
+        <input v-model="form.title" type="text" id="thread_title" class="form-input" name="title" />
       </div>
 
       <div class="form-group">
@@ -52,7 +46,20 @@ export default {
   },
   methods: {
     save() {
+      this.$emit('clean')
       this.$emit('save', { ...this.form })
+    }
+  },
+  watch: {
+    form: {
+      handler() {
+        if (this.form.title !== this.title || this.form.text !== this.text) {
+          this.$emit('dirty')
+        } else {
+          this.$emit('clean')
+        }
+      },
+      deep: true
     }
   },
   computed: {
