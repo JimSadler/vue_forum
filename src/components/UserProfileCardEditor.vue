@@ -56,12 +56,7 @@
 
       <div class="form-group">
         <label class="form-label" for="user_email">Email</label>
-        <input
-          autocomplete="off"
-          class="form-input"
-          id="user_email"
-          v-model="activeUser.email"
-        />
+        <input autocomplete="off" class="form-input" id="user_email" v-model="activeUser.email" />
       </div>
 
       <div class="form-group">
@@ -97,7 +92,7 @@ export default {
   },
   methods: {
     save() {
-      this.$store.dispatch('updateUser', { ...this.activeUser })
+      this.$store.dispatch('users/updateUser', { ...this.activeUser })
       this.$router.push({ name: 'Profile' })
     },
     cancel() {

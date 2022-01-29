@@ -36,7 +36,7 @@
                 >
               </li>
               <li class="dropdown-menu-item">
-                <a @click.prevent="$store.dispatch('signOut')">Sign Out</a>
+                <a @click.prevent="$store.dispatch('auth/signOut')">Sign Out</a>
               </li>
             </ul>
           </div>
@@ -49,28 +49,6 @@
           <router-link :to="{ name: 'Register' }">Register</router-link>
         </li>
       </ul>
-
-      <!--      <ul>-->
-      <!--        <li class="navbar-item">-->
-      <!--          <a href="index.html">Home</a>-->
-      <!--        </li>-->
-      <!--        <li class="navbar-item">-->
-      <!--          <a href="category.html">Category</a>-->
-      <!--        </li>-->
-      <!--        <li class="navbar-item">-->
-      <!--          <a href="forum.html">Forum</a>-->
-      <!--        </li>-->
-      <!--        <li class="navbar-item">-->
-      <!--          <a href="thread.html">Thread</a>-->
-      <!--        </li>-->
-      <!--        &lt;!&ndash; Show these option only on mobile&ndash;&gt;-->
-      <!--        <li class="navbar-item mobile-only">-->
-      <!--          <a href="profile.html">My Profile</a>-->
-      <!--        </li>-->
-      <!--        <li class="navbar-item mobile-only">-->
-      <!--          <a href="#">Logout</a>-->
-      <!--        </li>-->
-      <!--      </ul>-->
     </nav>
   </header>
 </template>
@@ -85,7 +63,7 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['authUser'])
+    ...mapGetters('auth', ['authUser'])
   }
 
   //   created () {
