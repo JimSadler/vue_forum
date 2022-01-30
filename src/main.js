@@ -6,6 +6,8 @@ import firebase from 'firebase/app'
 import 'firebase/firestore'
 import firebaseConfig from '@/config/firebase.js'
 import FontAwesome from '@/plugins/FontAwesome.js'
+import ClickOutsideDirective from '@/plugins/ClickOutsideDirective'
+import PageScrollDirective from './plugins/PageScrollDirective'
 
 // Your web app's Firebase configuration
 
@@ -16,6 +18,8 @@ const forumApp = createApp(App)
 forumApp.use(router)
 forumApp.use(store)
 forumApp.use(FontAwesome)
+forumApp.use(ClickOutsideDirective)
+forumApp.use(PageScrollDirective)
 
 const requireComponent = require.context('./components', true, /App[A-Z]\w+\.(vue|js)$/)
 requireComponent.keys().forEach(function(fileName) {
