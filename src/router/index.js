@@ -16,32 +16,32 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
   },
   {
     path: '/me',
     name: 'Profile',
     component: Profile,
-    meta: { toTop: true, smoothScroll: true, requiresAuth: true }
+    meta: { toTop: true, smoothScroll: true, requiresAuth: true },
   },
   {
     path: '/me/edit',
     name: 'ProfileEdit',
     component: Profile,
     props: { edit: true },
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
   },
   {
     path: '/category/:id',
     name: 'Category',
     component: Category,
-    props: true
+    props: true,
   },
   {
     path: '/forum/:id',
     name: 'Forum',
     component: Forum,
-    props: true
+    props: true,
   },
   {
     path: '/thread/:id',
@@ -49,7 +49,7 @@ const routes = [
     component: ThreadShow,
     props: true,
     async beforeEnter(to, from, next) {
-      await store.dispatch('threads/fetchThread', { id: to.params.id })
+      await store.dispatch('threads/fetchThread', { id: to.params.id, once: true })
       // check if thread exists
       const threadExists = findById(store.state.threads.items, to.params.id)
       // if it exists continue
@@ -62,36 +62,36 @@ const routes = [
           params: { pathMatch: to.path.substring(1).split('/') },
           // preserve existing query and hash if any
           query: to.query,
-          hash: to.hash
+          hash: to.hash,
         })
       }
-    }
+    },
   },
   {
     path: '/forum/:forumId/thread/create',
     name: 'ThreadCreate',
     component: ThreadCreate,
     props: true,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
   },
   {
     path: '/thread/:id/edit',
     name: 'ThreadEdit',
     component: ThreadEdit,
     props: true,
-    meta: { requiresAuth: true }
+    meta: { requiresAuth: true },
   },
   {
     path: '/register',
     name: 'Register',
     component: Register,
-    meta: { requiresGuest: true }
+    meta: { requiresGuest: true },
   },
   {
     path: '/signin',
     name: 'SignIn',
     component: SignIn,
-    meta: { requiresGuest: true }
+    meta: { requiresGuest: true },
   },
   {
     path: '/logout',
@@ -100,13 +100,13 @@ const routes = [
     async beforeEnter(to, from) {
       await store.dispatch('auth/signOut')
       return { name: 'Home' }
-    }
+    },
   },
   {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
-    component: NotFound
-  }
+    component: NotFound,
+  },
 ]
 const router = createRouter({
   history: createWebHistory(),
@@ -116,7 +116,7 @@ const router = createRouter({
     if (to.meta.toTop) scroll.top = 0
     if (to.meta.smoothScroll) scroll.behavior = 'smooth'
     return scroll
-  }
+  },
 })
 router.beforeEach(async (to, from) => {
   await store.dispatch('auth/initAuthentication')
