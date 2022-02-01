@@ -3,7 +3,7 @@ const PageScrollDirective = {
   mounted(el, binding) {
     el.__PageScroll__ = debounce(
       () => {
-        console.log('scrolling')
+        // console.log('scrolling')
         binding.value()
       },
       200,
@@ -13,7 +13,7 @@ const PageScrollDirective = {
   },
   unmounted(el) {
     document.removeEventListener('scroll', el.__PageScroll__)
-  }
+  },
 }
 export default app => {
   app.directive('page-scroll', PageScrollDirective)

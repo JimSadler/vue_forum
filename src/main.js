@@ -8,6 +8,7 @@ import 'firebase/firestore'
 import FontAwesome from '@/plugins/FontAwesome.js'
 import ClickOutsideDirective from '@/plugins/ClickOutsideDirective'
 import PageScrollDirective from './plugins/PageScrollDirective'
+import Vue3Pagination from './plugins/Vue3Pagination'
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
@@ -16,7 +17,7 @@ var firebaseConfig = {
   projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
   storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 }
 
 // Initialize Firebase
@@ -28,9 +29,10 @@ forumApp.use(store)
 forumApp.use(FontAwesome)
 forumApp.use(ClickOutsideDirective)
 forumApp.use(PageScrollDirective)
+forumApp.use(Vue3Pagination)
 
 const requireComponent = require.context('./components', true, /App[A-Z]\w+\.(vue|js)$/)
-requireComponent.keys().forEach(function(fileName) {
+requireComponent.keys().forEach(function (fileName) {
   let baseComponentConfig = requireComponent(fileName)
   baseComponentConfig = baseComponentConfig.default || baseComponentConfig
   const baseComponentName =

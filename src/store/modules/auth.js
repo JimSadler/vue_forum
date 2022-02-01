@@ -4,12 +4,12 @@ export default {
   state: {
     authId: null,
     authUserUnsubscribe: null,
-    authObserverUnsubscribe: null
+    authObserverUnsubscribe: null,
   },
   getters: {
     authUser: (state, getters, rootState, rootGetters) => {
       return rootGetters['users/user'](state.authId)
-    }
+    },
   },
   actions: {
     initAuthentication({ dispatch, commit, state }) {
@@ -46,10 +46,7 @@ export default {
       const provider = new firebase.auth.GoogleAuthProvider()
       const response = await firebase.auth().signInWithPopup(provider)
       const user = response.user
-      const userRef = firebase
-        .firestore()
-        .collection('users')
-        .doc(user.uid)
+      const userRef = firebase.firestore().collection('users').doc(user.uid)
       const userDoc = await userRef.get()
       if (!userDoc.exists) {
         return dispatch(
@@ -59,7 +56,7 @@ export default {
             name: user.displayName,
             email: user.email,
             username: user.email,
-            avatar: user.photoURL
+            avatar: user.photoURL,
           },
           { root: true }
         )
@@ -81,18 +78,27 @@ export default {
           id: userId,
           handleUnsubscribe: unsubscribe => {
             commit('setAuthUserUnsubscribe', unsubscribe)
-          }
+          },
         },
         { root: true }
       )
       commit('setAuthId', userId)
     },
-    async fetchAuthUsersPosts({ commit, state }) {
-      const posts = await firebase
+    async fetchAuthUsersPosts({ commit, state }, { startAfter }) {
+      // limit
+      // startAfter(doc)
+      // orderBy()
+      let query = await firebase
         .firestore()
         .collection('posts')
         .where('userId', '==', state.authId)
-        .get()
+        .orderBy('publishedAt', 'desc')
+        .limit(10)
+      if (startAfter) {
+        const doc = await firebase.firestore().collection('posts').doc(startAfter.id).get()
+        query = query.startAfter(doc)
+      }
+      const posts = await query.get()
       posts.forEach(item => {
         commit('setItem', { resource: 'posts', item }, { root: true })
       })
@@ -102,7 +108,7 @@ export default {
         state.authUserUnsubscribe()
         commit('setAuthUserUnsubscribe', null)
       }
-    }
+    },
   },
   mutations: {
     setAuthId(state, id) {
@@ -113,6 +119,6 @@ export default {
     },
     setAuthObserverUnsubscribe(state, unsubscribe) {
       state.authObserverUnsubscribe = unsubscribe
-    }
-  }
+    },
+  },
 }

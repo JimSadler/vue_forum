@@ -123,11 +123,7 @@ figcaption {
   display: inline;
 }
 
-.forum-list
-  .forum-listing
-  .forum-details
-  ul.subforums.subforums
-  li:not(:last-of-type)::after {
+.forum-list .forum-listing .forum-details ul.subforums.subforums li:not(:last-of-type)::after {
   content: '\f111';
   font-family: 'FontAwesome';
   font-size: 4px;
@@ -2528,4 +2524,11 @@ hr {
 #app {
   background: #f5f8fe;
   min-height: 100vh;
+}
+.Pagination {
+  justify-content: center;
+  margin: 40px !important;
+}
+.Pagination .Page-active {
+  color: white;
 }

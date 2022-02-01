@@ -1,7 +1,11 @@
 <template>
   <the-nav-bar />
-  <div class="container ">
-    <router-view v-show="showPage" @ready="onPageReady" :key="$route.path" />
+  <div class="container">
+    <router-view
+      v-show="showPage"
+      @ready="onPageReady"
+      :key="`${$route.path}${JSON.stringify($route.query)}`"
+    />
     <AppSpinner v-show="!showPage" class="spinner" />
   </div>
 </template>
@@ -15,7 +19,7 @@ export default {
   components: { TheNavBar },
   data() {
     return {
-      showPage: false
+      showPage: false,
     }
   },
   methods: {
@@ -23,19 +27,19 @@ export default {
     onPageReady() {
       this.showPage = true
       NProgress.done()
-    }
+    },
   },
   created() {
     this.fetchAuthUser()
     NProgress.configure({
       speed: 200,
-      showSpinner: false
+      showSpinner: false,
     })
     this.$router.beforeEach(() => {
       this.showPage = false
       NProgress.start()
     })
-  }
+  },
 }
 </script>
 
