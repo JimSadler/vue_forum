@@ -41,7 +41,7 @@ export default {
 
 <style>
 @import 'assets/style.css';
-@import '~nprogress/nprogress.css';
+@import 'nprogress/nprogress.css';
 .spinner {
   margin-top: 15px;
 }

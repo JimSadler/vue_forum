@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import PostList from '@/components/PostList'
+import PostList from '@/components/PostList.vue'
 import { mapGetters } from 'vuex'
 import UserProfileCard from '../UserProfileCard.vue'
 import UserProfileCardEditor from '../UserProfileCardEditor.vue'

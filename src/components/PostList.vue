@@ -22,7 +22,7 @@
           v-if="post.userId === $store.state.auth.authId"
           @click.prevent="toggleEditMode(post.id)"
           href="#"
-          style="margin-left: auto; padding-left: 10px;"
+          style="margin-left: auto; padding-left: 10px"
           title="make a change"
           class="link-unstyled"
           ><fa icon="pencil-alt"
@@ -37,7 +37,7 @@
 </template>
 
 <script>
-import PostEditor from './PostEditor'
+import PostEditor from './PostEditor.vue'
 import { mapActions } from 'vuex'
 export default {
   props: {

@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import ThreadList from '@/components/ThreadList'
+import ThreadList from '@/components/ThreadList.vue'
 import { findById } from '@/helpers'
 import { mapActions } from 'vuex'
 import asyncDataStatus from '../../mixins/asyncDataStatus'
