@@ -782,6 +782,16 @@
   dependencies:
     "@types/yargs-parser" "*"
 
+"@vee-validate/i18n@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@vee-validate/i18n/-/i18n-4.5.7.tgz#4d6e0cfdcaad07792adb296502366a923cdac663"
+  integrity sha512-QD7gM57UBkcWZfBSA808yX3i1/yREaueNwBdfZxX2Dl2pywNyy11ZP62iH1vs9FIXvlMvo5YnfFj7EA0DRcHHA==
+
+"@vee-validate/rules@^4.5.7":
+  version "4.5.7"
+  resolved "https://registry.yarnpkg.com/@vee-validate/rules/-/rules-4.5.7.tgz#951b3f3525fb762de4ede7f67aad21675f32ff18"
+  integrity sha512-8Q89wiOJ7cdYDOHTBAWr0/CyLvqPtTTxMieEhYFiL//PpkrsmCPuad1wziz1tck2U15J0IXA01/lwrq/J3VD7g==
+
 "@vitejs/plugin-vue@^1.6.1":
   version "1.10.2"
   resolved "https://registry.yarnpkg.com/@vitejs/plugin-vue/-/plugin-vue-1.10.2.tgz#d718479e2789d8a94b63e00f23f1898ba239253a"
@@ -829,7 +839,7 @@
     "@vue/compiler-dom" "3.2.29"
     "@vue/shared" "3.2.29"
 
-"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.18":
+"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.15", "@vue/devtools-api@^6.0.0-beta.18":
   version "6.0.0-beta.21.1"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.21.1.tgz#f1410f53c42aa67fa3b01ca7bdba891f69d7bc97"
   integrity sha512-FqC4s3pm35qGVeXRGOjTsRzlkJjrBLriDS9YXbflHLsfA9FrcKzIyWnLXoNm+/7930E8rRakXuAc2QkC50swAw==
@@ -5713,6 +5723,13 @@ vary@^1, vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+
+vee-validate@4:
+  version "4.5.8"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-4.5.8.tgz#8e394978ef3b74e589b869c626cd2a7d391ac81c"
+  integrity sha512-XZx2J93rlET49CdIIoxG9R6wQNoT3RxUUw9ar3QbIhczpzbtlm4BQ+TpCA9DoYHKFlApcXnE28WU7m4quoPsCA==
+  dependencies:
+    "@vue/devtools-api" "^6.0.0-beta.15"
 
 verror@1.10.0:
   version "1.10.0"

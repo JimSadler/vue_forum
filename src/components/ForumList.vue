@@ -2,21 +2,17 @@
   <div class="col-full">
     <div class="forum-list">
       <h2 class="list-title">
-        <router-link
-          v-if="categoryId"
-          :to="{ name: 'Category', params: { id: categoryId } }"
-          >{{ title }}</router-link
-        >
+        <router-link v-if="categoryId" :to="{ name: 'Category', params: { id: categoryId } }">{{
+          title
+        }}</router-link>
         <span v-else>{{ title }}</span>
       </h2>
 
       <div class="forum-listing" v-for="forum in forums" :key="forum.id">
         <div class="forum-details">
-          <router-link
-            class="text-xlarge"
-            :to="{ name: 'Forum', params: { id: forum.id } }"
-            >{{ forum.name }}</router-link
-          >
+          <router-link class="text-xlarge" :to="{ name: 'Forum', params: { id: forum.id } }">{{
+            forum.name
+          }}</router-link>
           <p>{{ forum.description }}</p>
         </div>
 
@@ -38,16 +34,16 @@ export default {
   props: {
     forums: {
       required: true,
-      type: Array
+      type: Array,
     },
     title: {
       type: String,
-      default: 'Forums'
+      default: 'Forums',
     },
     categoryId: {
       required: false,
-      type: String
-    }
+      type: String,
+    },
   },
   methods: {
     forumThreadsWord(forum) {
@@ -56,8 +52,8 @@ export default {
       } else {
         return 'no threads'
       }
-    }
-  }
+    },
+  },
 }
 </script>
 

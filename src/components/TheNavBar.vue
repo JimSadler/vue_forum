@@ -23,7 +23,7 @@
             @click.prevent="userDropdownOpen = !userDropdownOpen"
             v-click-outside="() => (userDropdownOpen = false)"
           >
-            <img
+            <AppAvatarImg
               class="avatar-small"
               :src="authUser.avatar"
               :alt="`${authUser.name} profile picture`"
@@ -77,11 +77,11 @@ export default {
   data() {
     return {
       userDropdownOpen: false,
-      mobileNavMenu: false
+      mobileNavMenu: false,
     }
   },
   computed: {
-    ...mapGetters('auth', ['authUser'])
+    ...mapGetters('auth', ['authUser']),
   },
 
   created() {
@@ -89,7 +89,7 @@ export default {
     this.$router.beforeEach((to, from) => {
       this.mobileNavMenu = false
     })
-  }
+  },
 }
 </script>
 

@@ -16,7 +16,7 @@
         </div>
         <div class="activity">
           <p class="replies-count">{{ thread.repliesCount }} replies</p>
-          <img class="avatar-medium" :src="userById(thread.userId).avatar" alt="" />
+          <AppAvatarImg class="avatar-medium" :src="userById(thread.userId).avatar" alt="" />
           <div>
             <p class="text-xsmall">
               <a href="#">{{ userById(thread.userId).name }}</a>
@@ -37,8 +37,8 @@ export default {
   props: {
     threads: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   computed: {
@@ -47,7 +47,7 @@ export default {
     },
     posts() {
       return this.$store.state.posts.items
-    }
+    },
   },
   methods: {
     postById(postId) {
@@ -55,8 +55,8 @@ export default {
     },
     userById(userId) {
       return findById(this.users, userId) || {}
-    }
-  }
+    },
+  },
 }
 </script>
 

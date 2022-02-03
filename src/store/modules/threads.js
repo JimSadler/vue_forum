@@ -6,7 +6,7 @@ import {
   makeFetchItemsAction,
 } from '@/helpers'
 import firebase from 'firebase'
-import chunk from 'lodash'
+import chunk from 'lodash/chunk'
 export default {
   namespaced: true,
   state: {

@@ -1,41 +1,42 @@
 <template>
   <div class="profile-card">
-    <form @submit.prevent="save">
-      <p class="text-center">
-        <img
-          :src="user.avatar"
-          :alt="`${user.name} profile picture`"
-          class="avatar-xlarge img-update"
-        />
+    <VeeForm @submit="save">
+      <p class="text-center avatar-edit">
+        <label for="avatar">
+          <AppAvatarImg
+            :src="activeUser.avatar"
+            :alt="`${user.name} profile picture`"
+            class="avatar-xlarge img-update"
+          />
+          <div class="avatar-upload-overlay">
+            <AppSpinner v-if="uploadingImage" color="white" />
+            <fa v-else icon="camera" size="3x" :style="{ color: 'white', opacity: '.8' }" />
+          </div>
+          <input
+            v-show="false"
+            type="file"
+            id="avatar"
+            accept="image/*"
+            @change="handleAvatarUpload"
+          />
+        </label>
       </p>
+      <UserProfileCardEditorRandomAvatar @hit="activeUser.avatar = $event" />
 
-      <div class="form-group">
-        <input
-          type="text"
-          placeholder="Username"
-          v-model="activeUser.username"
-          class="form-input text-lead text-bold"
-        />
-      </div>
-
-      <div class="form-group">
-        <input
-          v-model="activeUser.name"
-          type="text"
-          placeholder="Full Name"
-          class="form-input text-lead"
-        />
-      </div>
-
-      <div class="form-group">
-        <label for="user_bio">Bio</label>
-        <textarea
-          v-model="activeUser.bio"
-          class="form-input"
-          id="user_bio"
-          placeholder="Write a few words about yourself."
-        ></textarea>
-      </div>
+      <AppFormField
+        label="Username"
+        name="username"
+        v-model="activeUser.username"
+        :rules="`required|unique:users,username,${user.username}`"
+      />
+      <AppFormField label="Full Name" name="name" v-model="activeUser.name" rules="required" />
+      <AppFormField
+        label="Bio"
+        name="bio"
+        as="textarea"
+        v-model="activeUser.bio"
+        placeholder="Write a few words about yourself."
+      />
 
       <div class="stats">
         <span>{{ user.postsCount }} posts</span>
@@ -44,62 +45,85 @@
 
       <hr />
 
-      <div class="form-group">
-        <label class="form-label" for="user_website">Website</label>
-        <input
-          autocomplete="off"
-          class="form-input"
-          id="user_website"
-          v-model="activeUser.website"
+      <AppFormField label="Website" name="website" v-model="activeUser.website" rules="" />
+      <AppFormField
+        label="Email"
+        name="email"
+        v-model="activeUser.email"
+        :rules="`required|email|unique:users,email,${user.email}`"
+      />
+      <AppFormField
+        label="Location"
+        name="location"
+        v-model="activeUser.location"
+        list="locations"
+        @mouseenter="loadLocationOptions"
+        rules=""
+      />
+      <datalist id="locations">
+        <option
+          v-for="location in locationOptions"
+          :value="location.name.common"
+          :key="location.name.common"
         />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="user_email">Email</label>
-        <input autocomplete="off" class="form-input" id="user_email" v-model="activeUser.email" />
-      </div>
-
-      <div class="form-group">
-        <label class="form-label" for="user_location">Location</label>
-        <input
-          autocomplete="off"
-          class="form-input"
-          id="user_location"
-          v-model="activeUser.location"
-        />
-      </div>
+      </datalist>
 
       <div class="btn-group space-between">
-        <button class="btn-ghost" @="cancel">Cancel</button>
+        <button class="btn-ghost" @click.prevent="cancel">Cancel</button>
         <button type="submit" class="btn-blue">Save</button>
       </div>
-    </form>
+    </VeeForm>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
+import UserProfileCardEditorRandomAvatar from './UserProfileCardEditorRandomAvatar.vue'
 export default {
-  data() {
-    return {
-      activeUser: { ...this.user }
-    }
-  },
+  components: { UserProfileCardEditorRandomAvatar },
   props: {
     user: {
       type: Object,
-      required: true
+      required: true,
+    },
+  },
+  data() {
+    return {
+      uploadingImage: false,
+      activeUser: { ...this.user },
+      locationOptions: [],
     }
   },
   methods: {
-    save() {
+    ...mapActions('auth', ['uploadAvatar']),
+    async loadLocationOptions() {
+      if (this.locationOptions.length) return
+      const res = await fetch('https://restcountries.com/v3/all')
+      this.locationOptions = await res.json()
+    },
+    async handleAvatarUpload(e) {
+      this.uploadingImage = true
+      const file = e.target.files[0]
+      const uploadedImage = await this.uploadAvatar({ file })
+      this.activeUser.avatar = uploadedImage || this.activeUser.avatar
+      this.uploadingImage = false
+    },
+    async handleRandomAvatarUpload() {
+      const randomAvatarGenerated = this.activeUser.avatar.startsWith('https://pixabay')
+      if (randomAvatarGenerated) {
+        const image = await fetch(this.activeUser.avatar)
+        const blob = await image.blob()
+        this.activeUser.avatar = await this.uploadAvatar({ file: blob, filename: 'random' })
+      }
+    },
+    async save() {
+      await this.handleRandomAvatarUpload()
       this.$store.dispatch('users/updateUser', { ...this.activeUser })
       this.$router.push({ name: 'Profile' })
     },
     cancel() {
       this.$router.push({ name: 'Profile' })
-    }
-  }
+    },
+  },
 }
 </script>
-
-<style lang="scss" scoped></style>

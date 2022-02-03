@@ -8,6 +8,18 @@
     <div class="sk-chase-dot"></div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    color: { type: String, default: '#263959' },
+  },
+  data() {
+    return {
+      spinnerColor: this.color,
+    }
+  },
+}
+</script>
 <style>
 .sk-chase {
   width: 40px;
@@ -30,7 +42,7 @@
   display: block;
   width: 25%;
   height: 25%;
-  background-color: #1f2b38;
+  background-color: v-bind(spinnerColor);
   border-radius: 100%;
   animation: sk-chase-dot-before 2s infinite ease-in-out both;
 }

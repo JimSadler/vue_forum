@@ -2,7 +2,7 @@
   <div>
     <div class="profile-card">
       <p class="text-center">
-        <img
+        <AppAvatarImg
           :src="user.avatar"
           :alt="`${user.name} profile picture`"
           class="avatar-xlarge"
@@ -47,10 +47,10 @@ export default {
   props: {
     user: {
       type: Object,
-      required: true
+      required: true,
     },
-    computed: {}
-  }
+    computed: {},
+  },
 }
 </script>
 
