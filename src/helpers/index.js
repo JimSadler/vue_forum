@@ -45,6 +45,5 @@ export const makeFetchItemsAction = ({ emoji, resource }) => {
 
 export const arrayRandom = array => {
   const randomIndex = Math.floor(Math.random() * array.length)
-  console.log(randomIndex)
   return array[randomIndex]
 }

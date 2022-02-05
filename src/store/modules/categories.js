@@ -1,4 +1,4 @@
-import firebase from 'firebase'
+import firebase from '@/helpers/firebase'
 import { makeFetchItemAction, makeFetchItemsAction } from '@/helpers'
 export default {
   namespaced: true,
@@ -10,7 +10,6 @@ export default {
     fetchCategory: makeFetchItemAction({ emoji: '🏷', resource: 'categories' }),
     fetchCategories: makeFetchItemsAction({ emoji: '🏷', resource: 'categories' }),
     fetchAllCategories({ commit }) {
-      console.log('🔥', '🏷', 'all')
       return new Promise(resolve => {
         firebase
           .firestore()
