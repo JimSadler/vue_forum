@@ -5,7 +5,10 @@ import {
   makeFetchItemAction,
   makeFetchItemsAction,
 } from '@/helpers'
-import firebase from '@/helpers/firebase'
+import firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/firestore'
+import 'firebase/storage'
 import chunk from 'lodash/chunk'
 export default {
   namespaced: true,
