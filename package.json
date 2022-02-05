@@ -17,6 +17,7 @@
     "@originjs/vite-plugin-require-context": "^1.0.9",
     "@vee-validate/i18n": "^4.5.7",
     "@vee-validate/rules": "^4.5.7",
+    "@vueuse/head": "^0.7.5",
     "dayjs": "^1.10.4",
     "firebase": "8",
     "firebase-tools": "^10.1.0",
