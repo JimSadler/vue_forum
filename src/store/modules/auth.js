@@ -1,7 +1,5 @@
-import firebase from 'firebase/app'
-import 'firebase/auth'
-import 'firebase/firestore'
-import 'firebase/storage'
+import firebase from '@/helpers/firebase'
+
 import useNotifications from '@/composables/useNotifications'
 export default {
   namespaced: true,
